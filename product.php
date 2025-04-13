@@ -6,6 +6,10 @@ if (!isset($_GET['id'])) {
     header("Location: index.php");
     exit();
 }
+if (!isset($_SESSION['customer_id'])) {
+    header("Location: login.php");
+    exit();
+}
 
 $product = getProductById($conn, $_GET['id']);
 if (!$product) {

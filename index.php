@@ -2,6 +2,10 @@
 require 'includes/config.php';
 require 'includes/functions.php';
 $products = getProducts($conn);
+if (!isset($_SESSION['customer_id'])) {
+    header("Location: login.php");
+    exit();
+}
 ?>
 <!DOCTYPE html>
 <html lang="vi">
@@ -11,7 +15,19 @@ $products = getProducts($conn);
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Danh Sách Sản Phẩm</h1>
+    <div class="header">
+        <h1>Website Thương Mại Điện Tử</h1>
+        <div class="user-menu">
+            <?php if (isset($_SESSION['customer_id'])): ?>
+                <span>Xin chào, <?php echo $_SESSION['customer_username']; ?></span>
+                <a href="logout.php">Đăng xuất</a>
+            <?php else: ?>
+                <a href="login.php">Đăng nhập</a>
+                <a href="register.php">Đăng ký</a>
+            <?php endif; ?>
+            <a href="admin/login.php">Quản trị</a>
+        </div>
+    </div>
     <div class="product-list">
         <?php foreach ($products as $product): ?>
             <div class="product">
@@ -21,6 +37,5 @@ $products = getProducts($conn);
             </div>
         <?php endforeach; ?>
     </div>
-    <a href="admin/index.php">Nguyen Duy</a>
 </body>
 </html>
