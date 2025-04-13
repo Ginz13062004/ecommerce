@@ -21,6 +21,6 @@ $products = getProducts($conn);
             </div>
         <?php endforeach; ?>
     </div>
-    <a href="admin/index.php">Quản lý sản phẩm</a>
+    <a href="admin/index.php">Nguyen Duy</a>
 </body>
 </html>
