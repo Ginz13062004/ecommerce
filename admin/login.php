@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         header("Location: index.php");
         exit();
     } else {
-        $error = "Tên đăng nhập hoặc mật khẩu không đúng!";
+        $error = "Sai tên đăng nhập hoặc mật khẩu!";
     }
 }
 ?>
@@ -31,20 +31,27 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Đăng Nhập Admin</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <div class="auth-container">
-        <h1>Đăng Nhập Admin</h1>
-        <?php if (isset($error)) echo "<p style='color:red;'>$error</p>"; ?>
-        <form method="POST">
-            <label>Tên đăng nhập:</label><br>
-            <input type="text" name="username" required><br>
-            <label>Mật khẩu:</label><br>
-            <input type="password" name="password" required><br>
-            <button type="submit">Đăng nhập</button>
-        </form>
+    <div class="container mt-4">
+        <div class="row justify-content-center">
+            <div class="col-md-5">
+                <h1 class="text-center mb-3">Đăng Nhập Admin</h1>
+                <?php if (isset($error)) echo "<div class='alert alert-danger'>$error</div>"; ?>
+                <form method="POST">
+                    <div class="mb-3">
+                        <input type="text" class="form-control" name="username" placeholder="Tên đăng nhập" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="password" class="form-control" name="password" placeholder="Mật khẩu" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Đăng nhập</button>
+                </form>
+            </div>
+        </div>
     </div>
 </body>
 </html>
