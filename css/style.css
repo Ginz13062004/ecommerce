@@ -1,77 +1,50 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 20px;
+    padding: 15px;
 }
 
 h1 {
     text-align: center;
-}
-/* CSS cho trang chi tiết sản phẩm */
-.product-detail {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #fff;
-}
-
-.product-detail img {
-    max-width: 100%;
-    width: 300px; /* Giới hạn chiều rộng ảnh */
-    height: auto; /* Giữ tỷ lệ ảnh */
-    display: block;
-    margin: 0 auto 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.product-detail h1 {
     font-size: 24px;
-    margin-bottom: 10px;
-    color: #333;
-    text-align: center;
-}
-
-.product-detail p {
-    font-size: 16px;
-    line-height: 1.6;
-    color: #555;
     margin-bottom: 15px;
 }
 
-.product-detail .price {
-    font-size: 20px;
-    font-weight: bold;
-    color: #e44d26;
-    margin-bottom: 20px;
-    text-align: center;
+/* Header và menu người dùng */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background: #f8f8f8;
+    border-bottom: 1px solid #ddd;
 }
 
-.product-detail .back-link {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+.user-menu {
+    display: flex;
+    gap: 10px;
 }
 
-.product-detail .back-link:hover {
-    background-color: #45a049;
+.user-menu a, .user-menu span {
+    color: #0066cc;
+    font-size: 14px;
 }
+
+.user-menu a:hover {
+    text-decoration: underline;
+}
+
+/* Danh sách sản phẩm */
 .product-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 15px;
 }
 
 .product {
     border: 1px solid #ddd;
     padding: 10px;
-    width: 200px;
+    width: 180px;
     text-align: center;
 }
 
@@ -80,43 +53,108 @@ h1 {
     height: auto;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+.product h2 {
+    font-size: 16px;
+    margin: 10px 0;
 }
 
-table, th, td {
+/* Chi tiết sản phẩm */
+.product-detail {
+    max-width: 600px;
+    margin: 15px auto;
+    padding: 15px;
     border: 1px solid #ddd;
+    border-radius: 5px;
 }
 
-th, td {
-    padding: 10px;
+.product-detail img {
+    max-width: 100%;
+    width: 250px;
+    height: auto;
+    display: block;
+    margin: 0 auto 15px;
+}
+
+.product-detail p {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.product-detail .price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #e44d26;
     text-align: center;
 }
 
-form {
-    max-width: 500px;
-    margin: 0 auto;
+.product-detail .back-link {
+    display: inline-block;
+    padding: 8px 15px;
+    background: #4CAF50;
+    color: white;
+    border-radius: 4px;
 }
 
-input, textarea, button {
+.product-detail .back-link:hover {
+    background: #45a049;
+}
+
+/* Form (đăng nhập, đăng ký, admin) */
+.auth-container, form {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.auth-container label, form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.auth-container input, form input, form textarea {
     width: 100%;
-    margin-bottom: 10px;
     padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
 
-button {
-    background-color: #4CAF50;
+.auth-container button, form button {
+    width: 100%;
+    padding: 8px;
+    background: #4CAF50;
     color: white;
     border: none;
+    border-radius: 4px;
     cursor: pointer;
 }
 
-button:hover {
-    background-color: #45a049;
+.auth-container button:hover, form button:hover {
+    background: #45a049;
 }
 
+/* Bảng admin */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background: #f8f8f8;
+}
+
+/* Liên kết chung */
 a {
     color: #0066cc;
     text-decoration: none;
@@ -125,79 +163,4 @@ a {
 a:hover {
     text-decoration: underline;
 }
-/* CSS cho trang đăng nhập/đăng ký */
-.auth-container {
-    max-width: 400px;
-    margin: 50px auto;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
 
-.auth-container h1 {
-    font-size: 24px;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.auth-container form {
-    display: flex;
-    flex-direction: column;
-}
-
-.auth-container label {
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-.auth-container input {
-    padding: 8px;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-}
-
-.auth-container button {
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.auth-container button:hover {
-    background-color: #45a049;
-}
-
-.auth-container p {
-    text-align: center;
-    margin-top: 15px;
-}
-
-/* CSS cho header và menu người dùng */
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #f8f8f8;
-    border-bottom: 1px solid #ddd;
-}
-
-.user-menu {
-    display: flex;
-    gap: 15px;
-}
-
-.user-menu a, .user-menu span {
-    font-size: 16px;
-    color: #0066cc;
-    text-decoration: none;
-}
-
-.user-menu a:hover {
-    text-decoration: underline;
-}
